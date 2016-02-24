@@ -46,26 +46,24 @@
     <div class="container">
       <h3>Our Questions</h3>
       <p>Don't refresh, new questions will magically pop up down here</p>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Guest</th>
+            <th>Question</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each posts}}
             <tr>
-              <th>Guest</th>
-              <th>Question</th>
-              <th>Time</th>
+              <td>{{name}}</td>
+              <td>{{content}}</td>
+              <td>{{getMomentFromNow created}}</td>
             </tr>
-          </thead>
-          <tbody>
-            {{#each posts}}
-              <tr>
-                <td>{{name}}</td>
-                <td>{{content}}</td>
-                <td>{{getMomentFromNow created}}</td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </div>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
   </section>
 
