@@ -8,7 +8,11 @@ Template.body.onCreated(function() {
 
 Template.body.helpers({
   posts() {
-    return Posts.find();
+    return Posts.find({}, {
+      sort: {
+        created: -1,
+      },
+    });
   },
 
   getMomentFromNow(timestamp) {
