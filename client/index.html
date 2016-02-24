@@ -1,0 +1,105 @@
+<head>
+  <title>TechTalk #2 - A quick look into MeteorJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#question-list">Q&amp;A Session</a></li>
+          <li><a href="#question-form">Got A Question?</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="slider" class="hidden-xs hidden-sm">
+    <div class="container">
+      <img src="background.jpg" class="background">
+    </div>
+  </div>
+
+  <section id="home">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>TeckTalk #2</h1>
+        <p>A quick look into MeteorJS - a framework to build hybrid application.</p>
+        <p>Hope you all enjoy my talk and all other talks tonight. If you have any question, please click this button.</p>
+        <p><a href="#question-form" class="btn btn-primary btn-lg">Ask me</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="question-list">
+    <div class="container">
+      <h3>Our Questions</h3>
+      <p>Don't refresh, new questions will magically pop up down here</p>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Guest</th>
+              <th>Question</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each posts}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{content}}</td>
+                <td>{{getMomentFromNow created}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="question-form">
+    <div class="container">
+      <h3>Your Question</h3>
+      <form class="form-horizontal">
+        <fieldset>
+          <legend>Please ask me a question</legend>
+          <div class="form-group">
+            <label for="name" class="col-md-2 control-label">Your Name (*)</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Please tell me your name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="question" class="col-md-2 control-label">Your Question (*)</label>
+            <div class="col-md-10">
+              <textarea class="form-control" rows="3" id="question" name="question" placeholder="How can I help you" required></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+              <button type="reset" class="btn btn-default">Cancel</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+  <footer class="bg-primary">
+    <div class="container-fluid">
+      <p class="pull-right">Thank you for your time - romyngo@<a target="_blank" href="http://which-team.com">sportistics</a></p>
+    </div>
+  </footer>
+</body>
